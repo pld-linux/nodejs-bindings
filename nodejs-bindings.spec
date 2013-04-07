@@ -8,6 +8,7 @@ Group:		Development/Libraries
 URL:		https://github.com/TooTallNate/node-bindings
 Source0:	http://registry.npmjs.org/bindings/-/%{pkg}-%{version}.tgz
 # Source0-md5:	52921674f0d3a9f69f058f99fa12847d
+Patch0:		load-path.patch
 BuildRequires:	rpmbuild(macros) >= 1.634
 BuildRequires:	sed >= 4.0
 Requires:	nodejs
@@ -31,12 +32,12 @@ would be built at, and returns the first one that loads successfully.
 %prep
 %setup -qc
 mv package/* .
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT%{nodejs_libdir}/%{pkg}
-cp -pr bindings.js package.json $RPM_BUILD_ROOT%{nodejs_libdir}/%{pkg}
+cp -p bindings.js package.json $RPM_BUILD_ROOT%{nodejs_libdir}/%{pkg}
 
 %clean
 rm -rf $RPM_BUILD_ROOT

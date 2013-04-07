@@ -1,0 +1,11 @@
+--- nodejs-bindings-1.0.0/bindings.js~	2012-07-10 20:54:35.000000000 +0300
++++ nodejs-bindings-1.0.0/bindings.js	2013-04-07 20:29:01.117914415 +0300
+@@ -16,6 +16,8 @@
+       , version: process.versions.node
+       , bindings: 'bindings.node'
+       , try: [
++          // rpm installed binding
++          [ 'module_root', 'bindings' ],
+           // node-gyp's linked version in the "build" dir
+           [ 'module_root', 'build', 'bindings' ]
+           // node-waf and gyp_addon (a.k.a node-gyp)
