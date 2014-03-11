@@ -5,10 +5,10 @@ Version:	1.0.0
 Release:	1
 License:	MIT
 Group:		Development/Libraries
-URL:		https://github.com/TooTallNate/node-bindings
 Source0:	http://registry.npmjs.org/bindings/-/%{pkg}-%{version}.tgz
 # Source0-md5:	52921674f0d3a9f69f058f99fa12847d
 Patch0:		load-path.patch
+URL:		https://github.com/TooTallNate/node-bindings
 BuildRequires:	rpmbuild(macros) >= 1.634
 BuildRequires:	sed >= 4.0
 Requires:	nodejs
