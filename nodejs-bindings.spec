@@ -32,7 +32,7 @@ would be built at, and returns the first one that loads successfully.
 %prep
 %setup -qc
 mv package/* .
-%patch0 -p1
+%patch -P0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
